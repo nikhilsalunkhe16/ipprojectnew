@@ -126,3 +126,43 @@ span
 	color:rgb(0, 0, 0);
 	font-size: 15;
 }
+/* Mobile */
+@media only screen and (max-width: 600px) {
+    .full-page {
+        height: auto;
+    }
+    .form-box {
+        width: 80%;
+        height: auto;
+        margin: 10% auto;
+    }
+    .button-box {
+        width: 80%;
+        margin: 10% auto;
+    }
+    .toggle-btn {
+        padding: 8px 20px;
+    }
+    #btn {
+        width: 90px;
+    }
+    .input-group-login,
+    .input-group-register {
+        width: 80%;
+        top: 120px;
+    }
+}
+
+/* Tablet */
+@media only screen and (min-width: 601px) and (max-width: 1024px) {
+    .form-box {
+        width: 60%;
+    }
+}
+
+/* PC */
+@media only screen and (min-width: 1025px) {
+    .form-box {
+        width: 400px;
+    }
+}
