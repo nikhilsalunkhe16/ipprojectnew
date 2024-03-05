@@ -4,6 +4,25 @@
     <meta charset="UTF-8">
     <title>Login</title>
     <link rel="stylesheet" href="loginnewwww.css">
+    <script type="text/javascript">
+        function validateForm(){
+            var name = document.forms["login"]["fname"].value;
+            var password = document.forms["login"]["passwd"].value;
+        
+            if(name == "")
+            {
+                alert("⚠️Please enter username/Email..");
+                return false;
+            }
+
+            if(password == "")
+            {
+                alert("⚠️Please enter password..");
+                return false;
+            }
+        }
+    </script>
+
 </head>
 <body>
     <div class="full-page">
@@ -14,27 +33,25 @@
                     <button type='button'onclick='login()'class='toggle-btn'>Log In</button>
                     <button type='button'onclick='register()'class='toggle-btn'>Register</button>
                 </div>
-                <form id='login' class='input-group-login'>
-                    <input type='text'class='input-field'placeholder='Email Id' required >
-		    <input type='password'class='input-field'placeholder='Enter Password' required>
-            <div style="text-align: center;">
-                <a href="forgotpass.html">Forgot Password</a>
-            </div>
+                <form id='login' class='input-group-login' onsubmit="return validateForm()">
+                    <input type='text'class='input-field' id="fname" name="fname" placeholder='Email Id' >
+		    <input type='password'class='input-field' id="passwd" name="passwd" placeholder='Enter Password'>
 		    <input type='checkbox'class='check-box'><span>Remember Password</span>
 		    <button type='submit'class='submit-btn'>Log in</button>
 		 </form>
 		 <form id='register' class='input-group-register'>
-		     <input type='text'class='input-field'placeholder='First Name' required>
+		     <input type='text'class='input-field' id="reg_fname" placeholder='First Name' required>
 		     <input type='text'class='input-field'placeholder='Last Name ' required>
 		     <input type='email'class='input-field'placeholder='Email Id' required>
 		     <input type='password'class='input-field'placeholder='Enter Password' required>
 		     <input type='password'class='input-field'placeholder='Confirm Password'  required>
-		     <input type='checkbox'class='check-box'><span>I agree to the terms and                                                   conditions</span>
+		     <input type='checkbox'class='check-box'><span>I agree to the terms and conditions</span>
                     <button type='submit'class='submit-btn'>Register</button>
 	         </form>
             </div>
         </div>
     </div>
+    
     <script>
         var x=document.getElementById('login');
 		var y=document.getElementById('register');
@@ -51,18 +68,7 @@
 			y.style.left='450px';
 			z.style.left='0px';
 		}
+        
 	</script>
-	<p id="demo"></p>
-    <script>
-        function loginfunc(){
-            var txt;
-            if (confirm("Login?")) {
-                txt="You have login";
-            } else{
-                txt="You have cancel!";
-            }
-  document.getElementById("demo").innerHTML = txt;
-}    
-    </script>
 </body>
 </html>
